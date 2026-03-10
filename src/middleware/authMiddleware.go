@@ -21,7 +21,7 @@ func AuthMiddleware(c fiber.Ctx) error {
 		return jwtSecret, nil
 	})
 
-	if err != nil || token.Valid {
+	if err != nil || !token.Valid {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Unauthorized"})
 	}
 

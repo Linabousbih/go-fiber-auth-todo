@@ -17,6 +17,6 @@ func SetApp() *fiber.App {
 	})
 
 	routes.AuthRoutes(app)
-
+	routes.TodoRoutes(app)
 	return app
 }
